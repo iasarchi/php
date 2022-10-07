@@ -28,6 +28,6 @@ $curso = [
     'valorCurso' => $valorCurso,   
 ]
 
-    jason_encode(['curso']=>$curso);
+    json_encode(['curso']=>$curso);
 
 ?>
