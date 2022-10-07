@@ -13,12 +13,13 @@ $extrair = json_decode($obterDados);
 
 //Separar os dados do JSON
 
-$nomeCurso = $extrair->$cursos->$nomeCurso;
-$valorCurso = $extrair->$cursos->$valorCurso;
+$nomeCurso = $extrair->cursos->nomeCurso;
+$valorCurso = $extrair->cursos->valorCurso;
 
 //SQL
 
-$sql = "INSERT INTO cursos (nomeCurso, valorCurso) VALUES ($nomeCurso, $valorCurso)";
+$sql = "INSERT INTO cursos (nomeCurso, valorCurso) VALUES ('$nomeCurso', $valorCurso)";
+
 mysqli_query($conexao,$sql);
 
 //Exportar os dados Cadastrados
@@ -27,6 +28,6 @@ $curso = [
     'valorCurso' => $valorCurso,   
 ];
 
-echo json_encode(['curso']=>$curso);
+echo json_encode(['curso'=>$curso]);
 
 ?>
